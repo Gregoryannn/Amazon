@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\public",
+    "\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\asus\\Source\\Repos\\amazon-clone",
+  "SelectedNode": "\\src\\firebase.js",
   "PreviewInSolutionExplorer": false
 }
