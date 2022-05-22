@@ -1,27 +1,28 @@
 ﻿import React from 'react';
 import './Product.css';
-const Product = () => {
-    return (
-        <div className="product">
-            <div className="product__info">
-                <p>The lean startup</p>
-                <p className="product__price">
-                    <small>$</small>
-                    <strong>19.99</strong>
-                </p>
-                <div className="product__rating">
-                    <p>⭐️⭐️⭐️</p>
+
+    const Product = ({ title, image, price, rating }) => {
+        return (
+            <div className="product">
+                <div className="product__info">
+                    <p>{title}</p>
+                    <p className="product__price">
+                        <small>$</small>
+                        <strong>{price}</strong>
+                    </p>
+                    <div className="product__rating">
+                        {Array(rating).fill().map((_, i) => (
+                            <p>⭐️</p>
+                        ))}
+                    </div>
                 </div>
+
+                <img
+                    src={image}
+                    alt={title}
+                />
+                <button>Add to Basket</button>
             </div>
-
-            <img
-                src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
-                alt="The lean startup"
-            />
-            <button>Add to Basket</button>
-        </div>
-    )
-    );
-}
-
-export default Product;
+        );
+    }
+    export default Product;
