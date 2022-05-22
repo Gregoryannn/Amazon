@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import './Product.css';
 
-    const Product = ({ title, image, price, rating }) => {
+  const Product = ({ id, title, image, price, rating }) => {
         return (
             <div className="product">
                 <div className="product__info">
@@ -16,7 +16,6 @@ import './Product.css';
                         ))}
                     </div>
                 </div>
-
                 <img
                     src={image}
                     alt={title}
