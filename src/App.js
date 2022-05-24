@@ -3,19 +3,16 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Checkout from './components/Checkout';
-
 const App = () => {
     return (
         <Router>
             <div className="app">
+                <Navbar />
                 <Switch>
                     <Route path="/checkout">
-                        <Navbar />
-
                         <Checkout />
                     </Route>
                     <Route path="/">
-                        <Navbar />
                         <Home />
                     </Route>
                 </Switch>
