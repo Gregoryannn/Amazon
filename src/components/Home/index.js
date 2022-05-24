@@ -7,9 +7,10 @@ const Home = () => {
             <div className="home__container">
                 <img
                     className="home__image"
-                    src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-                    alt="prime video banner"
+                    src="https://images-na.ssl-images-amazon.com/images/G/15/digital/video/merch/2021/TV/BRND/BRND_MTH21_GWBleedingHero_1500x600_Final_en-CA_ENG_PVD6862._CB670220811_.jpg"
+                    alt="prime video ad banner"
                 />
+
                 <div className="home__row">
                     <Product
                         id="12321341"
