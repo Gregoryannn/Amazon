@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Checkout from './pages/Checkout';
-
+import Login from './pages/Login';
 
 const App = () => {
     return (
@@ -11,6 +11,9 @@ const App = () => {
             <div className="app">
                 <Navbar />
                 <Switch>
+                    <Route path="/login">
+                        <Login />
+                    </Route>
                     <Route path="/checkout">
                         <Checkout />
                     </Route>
