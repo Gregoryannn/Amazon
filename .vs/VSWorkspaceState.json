@@ -1,14 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\Checkout",
-    "\\src\\components\\CheckoutProduct",
-    "\\src\\components\\Product",
-    "\\src\\components\\Subtotal"
+    "\\src\\components\\Subtotal",
+    "\\src\\pages",
+    "\\src\\pages\\Login"
   ],
-  "SelectedNode": "\\src\\components\\Checkout\\index.js",
+  "SelectedNode": "\\src\\pages\\Login\\index.js",
   "PreviewInSolutionExplorer": false
 }
