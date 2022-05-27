@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../axios";
 import "./Payment.css";
 import { useStateValue } from "../../StateProvider";
 import CheckoutProduct from "../../components/CheckoutProduct";
