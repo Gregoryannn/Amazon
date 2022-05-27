@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const Payment = () => {
     const [{ user, basket }, dispatch] = useStateValue();
-    const [{ user, basket }, dispatch] = useStateValue();
     return ( <
         div className = "payment" >
         <
@@ -58,17 +57,15 @@ const Payment = () => {
         div className = "payment__title" >
         <
         h3 > Payment method < /h3> <
-        /div> <
-        div className = "payment__details" >
+        /div>
 
         <
-        /div> <
         div className = "payment__details" > < /div> <
         /div> <
         /div> <
         /div>
     );
-}
+
 };
 
 export default Payment;
