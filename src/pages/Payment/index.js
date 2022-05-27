@@ -1,16 +1,23 @@
-import React from 'react';
-import './Payment.css';
-import { useStateValue } from '../../StateProvider';
-import CheckoutProduct from '../../components/CheckoutProduct';
+import React from "react";
+import "./Payment.css";
+import { useStateValue } from "../../StateProvider";
+import CheckoutProduct from "../../components/CheckoutProduct";
+import { Link } from "react-router-dom";
 
 const Payment = () => {
     const [{ user, basket }, dispatch] = useStateValue();
-    return (
-
-        <
+    const [{ user, basket }, dispatch] = useStateValue();
+    return ( <
         div className = "payment" >
         <
         div className = "payment__container" >
+        <
+        h1 >
+        Checkout( < Link to = "/checkout" > { basket ? .length }
+            items < /Link>
+        ) <
+        /h1>
+
         <
         div className = "payment__section" >
         <
@@ -25,6 +32,7 @@ const Payment = () => {
         p > BC, Canada < /p> <
         /div> <
         /div>
+
 
         <
         div className = "payment__section" >
@@ -44,9 +52,7 @@ const Payment = () => {
             ))
         } <
         /div> <
-        /div>
-
-        <
+        /div> <
         div className = "payment__section" >
         <
         div className = "payment__title" >
@@ -57,11 +63,12 @@ const Payment = () => {
 
         <
         /div> <
+        div className = "payment__details" > < /div> <
         /div> <
         /div> <
         /div>
-
     );
 }
+};
 
 export default Payment;
