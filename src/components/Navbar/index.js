@@ -33,7 +33,7 @@ const Navbar = () => {
                         <span className="nav__right__optionLineTwo">{!user ? `Sign In` : `Sign Out`}</span>
                     </div>
                 </Link>
-                <Link to="/orders">
+             <Link to="/orders">
                     <div className="nav__right__option">
                         <span className="nav__right__optionLineOne">Returns</span>
                         <span className="nav__right__optionLineTwo">& Orders</span>
