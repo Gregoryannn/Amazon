@@ -1,48 +1,37 @@
 ﻿import React from "react";
 import { useStateValue } from "../../StateProvider";
-import "./Product.css";
-
-const Product = ({ id, title, image, price, rating }) => {
+import "./CheckoutProduct.css";
+const CheckoutProduct = ({ id, image, title, price, rating, hideButton = false }) => {
     const [{ basket }, dispatch] = useStateValue();
-    // console.log('basket', basket);
-    const addToBasket = () => {
-        // dispatch the item into the data layer
+    const removeFromBasket = () => {
         dispatch({
-            type: "ADD_TO_BASKET",
-            item: {
-                id,
-                title,
-                image,
-                price,
-                rating,
-    
-              },
-        });
-    };
+            type: "REMOVE_FROM_BASKET",
+            id: id,
+        })
+    }
+    return (
+        <div className="checkoutProduct">
+            <img className="checkoutProduct__image" src={image} alt={title} />
 
+            <div className="checkoutProduct__info">
+                <p className="checkoutProduct__title">{title}</p>
+                <p className="checkoutProduct__price">
+                    <small>$</small>
+                    <strong>{price}</strong>
+                </p>
+                <div className="checkoutProduct__rating">
+                    {Array(rating)
+                        .fill()
+                        .map((_, i) => (
+                            <p>⭐️</p>
+                        ))}
+                </div>
 
-return (
-    <div className="product">
-        <div className="product__info">
-            <p>{title}</p>
-            <p className="product__price">
-                <small>$</small>
-                <strong>{price}</strong>
-            </p>
-            <div className="product__rating">
-            
-                {Array(rating)
-                    .fill()
-                    .map((_, i) => (
-                        <p>⭐️</p>
-                    ))}
+                {!hideButton && (
+                    <button onClick={removeFromBasket}>Remove from Basket</button>
+                )}
             </div>
         </div>
-        <img src={image} alt={title} />
-        <button onClick={addToBasket}>Add to Basket</button>
-    </div>
-);
-
+    );
 };
-
-export default Product;
+export default CheckoutProduct;

@@ -1,37 +1,37 @@
-import React from 'react';
-import './Order.css';
-import moment from 'moment';
-import CurrencyFormat from 'react-currency-format';
-import CheckoutProduct from '../CheckoutProduct';
+import React, { useEffect, useState } from "react";
+import Order from "../../components/Order";
+import { db } from "../../firebase";
+import { useStateValue } from "../../StateProvider";
+import './Orders.css';
 
-const Order = ({ order }) => {
+const Orders = () => {
+    const [{ user }, dispatch] = useStateValue();
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        if (user) {
+            db
+                .collection('users')
+                .doc(user?.uid)
+                .collection('orders')
+                .orderBy('created', 'desc')
+                .onSnapshot(snapshot => (
+                    setOrders(snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        data: doc.data()
+                    })))
+                ))
+        } else { setOrders([]) }
+    }, []);
     return (
-        <div className="order">
-            <h2>Order</h2>
-            <p>{moment.unix(order.data.created).format('MMMMM Do YYYY, h: mma')}</p>
-            <p className="order__id">
-                <small>{order.id}</small>
-            </p>
-            {order.data.basket.map(item => (
-                <CheckoutProduct
-                    id={item.id}
-                    title={item.title}
-                    image={item.image}
-                    price={item.price}
-                    rating={item.rating}
-                />
-            ))}
-            <CurrencyFormat
-                renderText={(value) => (
-                       <h2 className="order__total">Order Total: {value}</h2>
-                )}
-                decimalScale={2}
-                value={order.data.amount / 100}
-                displayType={"text"}
-                thousandSeparator={true}
-                prefix={"$"}
-            />
+        <div className="orders">
+            <h1>Your Orders</h1>
+            <div className="orders__order">
+                {orders?.map(order => (
+                    <Order order={order} />
+                ))}
+            </div>
         </div>
     )
 }
-export default Order;
+export default Orders;
