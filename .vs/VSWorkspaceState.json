@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ functions",
-    "\\src\\pages",
+    "\\src",
     "\\src\\pages\\Payment"
   ],
-  "SelectedNode": "\\ functions\\index.js",
+  "SelectedNode": "\\src\\axios.js",
   "PreviewInSolutionExplorer": false
 }
