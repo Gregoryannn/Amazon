@@ -14,11 +14,14 @@ import Orders from "./pages/Orders";
 const promise = loadStripe(
     "pk_test_51HSDKsDgq6i9SALTKlrxpCxlYE6jmxmkwr9XrDLrXenzpR2LTRCoacZu9vc00R5DzoMgUTsddly7nf2SDXD9lUjP00Cb7l87Ia"
 );
+
 const App = () => {
     const [{ }, dispatch] = useStateValue();
+
     useEffect(() => {
         auth.onAuthStateChanged((authUser) => {
             // console.log("user: ", authUser);
+
             if (authUser) {
                 dispatch({
                     type: "SET_USER",
@@ -32,6 +35,7 @@ const App = () => {
             }
         });
     }, []);
+
     return (
         <Router>
             <div className="app">
@@ -62,4 +66,5 @@ const App = () => {
         </Router>
     );
 };
+
 export default App;

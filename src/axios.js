@@ -6,4 +6,4 @@ const instance = axios.create({
     // "http://localhost:5001/clone-b271c/us-central1/api",
 });
 
-export default instance; 
+export default instance;

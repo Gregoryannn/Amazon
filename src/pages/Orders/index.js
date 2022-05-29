@@ -22,10 +22,13 @@ const Orders = () => {
                     })))
                 ))
         } else { setOrders([]) }
+
     }, []);
+
     return (
         <div className="orders">
             <h1>Your Orders</h1>
+
             <div className="orders__order">
                 {orders?.map(order => (
                     <Order order={order} />
@@ -34,4 +37,5 @@ const Orders = () => {
         </div>
     )
 }
+
 export default Orders;
