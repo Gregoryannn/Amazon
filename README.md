@@ -27,5 +27,9 @@ Here's the feature's included in this project
 - 📝 Order History Page (Real time database)
 - ❄ Awesome animations like React Hover effects 
 
+##  📷 Project Demo Video
+
+![](https://github.com/Gregoryannn/amazon-clone/blob/main/amazon.gif)
+
 ### Credit
 [Clever Programmer](https://www.youtube.com/channel/UCqrILQNl5Ed9Dz6CGMyvMTQ)
